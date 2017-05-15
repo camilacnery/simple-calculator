@@ -16,12 +16,6 @@ export default class SimpleCalculator extends Component {
 		super(props);
 
 		this.state = {...initialState};
-
-		this.onChangeState = this.onChangeState.bind(this);
-	}
-
-	onChangeState(state) {
-		this.setState(state);
 	}
 
   render() {
@@ -34,8 +28,8 @@ export default class SimpleCalculator extends Component {
 				<InputButtons
 					{...this.state}
 					style={Style.inputContainer}
-					onChangeState={this.onChangeState}
-					clearState={() => this.setState(initialState)}
+					onChangeState={(state) => this.setState(state)}
+					clearState={() => this.setState({...initialState})}
 				/>
 			</View>
 		);
