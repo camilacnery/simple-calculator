@@ -1,0 +1,1 @@
+import SimpleCalculator from './src/index';
